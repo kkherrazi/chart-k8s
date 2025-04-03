@@ -1,5 +1,5 @@
 # chart-k8s
-[Helm](https://helm.sh/) est un gestionnaire de packages pour les applications Kubernetes, il gère les packages de ressources Kubernetes via les Charts.<br> 
+[Helm](https://helm.sh/) est un gestionnaire de packages pour les applications ***Kubernetes***, il gère les packages de ressources Kubernetes via les ***Charts***.<br> 
 Les Charts sont essentiellement le format de package de Helm
 
 ### Installation de Helm
