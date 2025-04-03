@@ -124,6 +124,35 @@ touche index.yaml
 #génerer le contenu du fichier index.yamp
 helm repo index .  --url https://github.com/kkherrazi/chart-k8s.git 
 ````
+Ajouter le dépôt de Chart sur le serveur local avec la commande suivante :
+````sh
+helm repo add chart-k8s https://kkherrazi.github.io/chart-k8s/
+````
+Vérifier les Charts Helm du référentiel et ses versions, utiliser la commande suivante :
+````sh
+helm search repo chart-k8s 
+````
+Installer les Charts Helm dans le cluster, utilisons la commande suivante :
+````sh
+helm install app chart-k8s/kkherrazi -n kkherrazi-chart --values=values.yaml --create-namespace
+````
+
+vérifier les pods et services :
+````sh
+kubectl get po -n kkherrazi-chart
+kubectl get svc -n kkherrazi-chart
+````
+
+***Nettoyage des Charts et restauration de Helm***
+
+Supprimer toutes les ressources associées à la dernière version du Chart ainsi que l'historique des versions, le libérant pour le futur, utilisez la commande suivante :
+````sh
+helm delete app -n datasicentest-chart
+````
+Et pour Helm Rollback et pour voir les numéros de révision, exécutez :
+````sh
+helm history app –n datasicentest-chart
+````
 
 ### Désinstallation de Helm
 désinstaller une version de notre cluster Kubernetes :
