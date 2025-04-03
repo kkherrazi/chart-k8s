@@ -1,5 +1,6 @@
 # chart-k8s
-Helm gère les packages de ressources Kubernetes via les Charts. Les Charts sont essentiellement le format de package de Helm
+Helm est un gestionnaire de packages pour les applications Kubernetes, il gère les packages de ressources Kubernetes via les Charts.<br> 
+Les Charts sont essentiellement le format de package de Helm
 
 ### Installation de Helm
 Il existe plusieurs façons d'installer Helm qui sont soigneusement décrites sur [la page d'installation officielle](https://helm.sh/docs/intro/install/) de Helm. Le moyen le plus rapide d'installer helm sur Linux consiste à utiliser le script shell fournis :
@@ -10,16 +11,12 @@ chmod 700 get_helm.sh
 ````
 
 ### Création d'un chart
-La première étape, bien sûr, serait de créer un nouveau chart avec un nom donné :
+Créer un nouveau chart avec un nom donné :
 ````sh
 helm create kkherrazi
 ````
-Affichage en sortie:
-````sh
-Creating kkherrazi
-````
-Le nom du chart fourni kkherrazi sera le nom du répertoire dans lequel le chart est créé et stocké.
 
+Le nom du chart fourni kkherrazi sera le nom du répertoire dans lequel le chart est créé et stocké.
 Structure de répertoire créée   :
 
 ````sh
@@ -65,7 +62,7 @@ helm lint ./kkherrazi
 ````
 
 ### Helm template
-Avoir un aperçu du résultat une fois les valeur remplacée par Helm :
+Exécuter cette commande pour avoir un aperçu du résultat une fois les valeur remplacée par Helm :
 ````sh
 helm template ./kkherrazi
 ````
@@ -78,7 +75,7 @@ kubectl config view --raw > ~/.kube/config # nous exportons la configuration qu'
 helm install  kkherrazi-chart ./kkherrazi --values=./kkherrazi/values.yaml # nous installation notre chart kkherrazi en lui donnant un nom kkherrazi-chart et en précisant le fichier à utiliser pour fournir les valeurs qui seront utilisées pour remplacer les variables dans les templates
 ````
 
-Vérifer les services et les Pods :
+Vérifer les services et les Pods disponibles :
 ````sh
 kubectl get svc,Pod | grep kkherrazi
 ````
