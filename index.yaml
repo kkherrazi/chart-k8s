@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  kkherrazi:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-04-03T23:02:48.449754093Z"
+    description: A Helm chart for Kubernetes
+    digest: 54d1af5fa7ed3e47a33760aad1da6b5473ade323bf5fdef3d57b149951e1ce55
+    name: kkherrazi
+    type: application
+    urls:
+    - https://github.com/kkherrazi/chart-k8s.git/kkherrazi-0.1.0.tgz
+    version: 0.1.0
+generated: "2025-04-03T23:02:48.448821469Z"
