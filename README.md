@@ -114,6 +114,17 @@ Créer un fichier .tgz de la chart Helm à l'emplacement racine qui nous permett
 ````sh
 helm package .
 ````
+
+### Helm Repo
+Le dépôt git sur lequel sont hébergé le Chart Helm. Le nom du référentiel GitHub utilisé est chart-k8s.
+Créer le fichier index.yaml pour le référentiel Helm ensuite  
+````sh
+cd chart-k8s
+touche index.yaml
+#génerer le contenu du fichier index.yamp
+helm repo index .  --url https://github.com/kkherrazi/chart-k8s.git 
+````
+
 ### Désinstallation de Helm
 désinstaller une version de notre cluster Kubernetes :
 ````sh
